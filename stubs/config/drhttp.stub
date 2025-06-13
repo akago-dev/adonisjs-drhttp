@@ -1,0 +1,27 @@
+{{{
+  exports({ to: app.configPath('drhttp.ts') })
+}}}
+
+import env from '#start/env'
+import { Request } from '@adonisjs/core/http'
+import app from '@adonisjs/core/services/app'
+import { defineConfig } from '@akago/adonisjs-drhttp'
+
+export default defineConfig({
+  /**
+   * The DSN of the drhttp server
+   */
+  dsn: env.get('DRHTTP_DSN'),
+
+  enabled: true,
+
+  /**
+   * Paths which requests won't be sent to DrHTTP 
+   */
+  excludedPaths: ['/health', '/favicon.ico'],
+
+  /**
+   * Requests won't be sent to DrHTTP
+   */
+  excludedRequest: async (_: Request) => app.inTest,
+})
