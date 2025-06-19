@@ -1,7 +1,8 @@
+
 {
   "name": "@akago/adonisjs-drhttp",
   "description": "DrHTTP client for AdonisJS.",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "publishConfig": {
     "access": "public",
     "tag": "latest"
