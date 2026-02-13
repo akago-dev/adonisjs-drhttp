@@ -39,7 +39,7 @@ export async function configure(command: Configure) {
   /**
    * Register provider
    */
-  await codemods.updateRcFile((rcFile) => {
+  await codemods.updateRcFile((rcFile: any) => {
     rcFile.addProvider('@akago/adonisjs-drhttp/provider')
   })
 
